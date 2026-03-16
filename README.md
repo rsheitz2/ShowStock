@@ -2,6 +2,12 @@
 
 A small Dash app that displays historical stock price and volume for a given ticker using `yfinance`.
 
+## Demo
+
+<video src="assets/demo.mp4" controls width="800">
+  Your browser does not support the video tag.
+</video>
+
 ## Setup
 
 ```bash

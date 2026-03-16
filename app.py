@@ -106,9 +106,9 @@ app.layout = html.Div(
                 html.Label("Ticker"),
                 dcc.Input(id="ticker-input", type="text", value="AAPL", style={"width": "120px"}),
                 html.Label("Start"),
-                dcc.DatePickerSingle(id="start-date", date="2023-01-01"),
+                dcc.DatePickerSingle(id="start-date", date="2025-01-01"),
                 html.Label("End"),
-                dcc.DatePickerSingle(id="end-date", date="2023-12-31"),
+                dcc.DatePickerSingle(id="end-date", date="2025-12-31"),
                 html.Button("Load", id="load-button", n_clicks=0),
             ],
             style={"display": "flex", "gap": "10px", "alignItems": "center"},
@@ -140,13 +140,13 @@ def update_graphs(n_clicks, ticker, start_date, end_date):
     price_fig.add_trace(go.Scatter(x=df["Date"], y=df["Close"], mode='markers', name="Close"))
     price_fig.add_trace(go.Scatter(x=df["Date"], y=df["Open"], mode='markers', name="Open"))
     price_fig.update_layout(title=f"{ticker.upper()} Price")
-    price_fig.update_yaxes('Price ($)')
+    price_fig.update_yaxes(title='Price ($)')
 
     volume_fig = go.Figure()
     fig_setup(volume_fig)
     volume_fig.add_trace(go.Bar(x=df["Date"], y=df["Volume"], name="Volume"))
     volume_fig.update_layout(title=f"{ticker.upper()} Volume")
-    volume_fig.update_yaxes('Volume')
+    volume_fig.update_yaxes(title='Volume')
 
     return price_fig, volume_fig, ""
 

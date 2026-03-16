@@ -4,7 +4,7 @@ A small Dash app that displays historical stock price and volume for a given tic
 
 ## Demo
 
-<video src="assets/demo.mp4" controls width="800">
+https://github.com/rsheitz2/ShowStock/blob/master/assets/demo.mp4
 
 ## Setup
 
